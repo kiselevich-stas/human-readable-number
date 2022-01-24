@@ -13,9 +13,9 @@ module.exports = function toReadable(number) {
         "ten",
         "eleven",
         "twelve",
-        "therten",
+        "thirteen",
         "fourteen",
-        "fiveteen",
+        "fifteen",
         "sixteen",
         "seventeen",
         "eighteen",
@@ -23,29 +23,29 @@ module.exports = function toReadable(number) {
         ];
         let tens = [
         "twenty",
-        "therty",
-        "fourty",
-        "fivety",
+        "thirty",
+        "forty",
+        "fifty",
         "sixty",
         "seventy",
         "eighty",
         "ninety"
         ];
         
-        if (number == 0) return 'zero'
-        if (number < 20) return ones[number];
-        if (number == 100) return "one hundred";
+    if (number == 0) return 'zero';
+    if (number < 20) return ones[number];
+    if (number == 100) return "one hundred";
         
-        if (number < 100)
-        return (
+    if (number < 100)
+    return (
         tens[parseInt(number / 10) - 2] +
         (number % 10 !== 0 ? " " : "") +
         ones[number % 10]
-        );
+    );
         
-        if (number > 100) {
+    if (number > 100) {
         let ostatok = number % 100;
         return ones[parseInt(number.toString()[0])] + " hundred" + ' ' + toRead(ostatok);
-        }
+    }
 
 };
