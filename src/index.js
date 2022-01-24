@@ -45,6 +45,9 @@ module.exports = function toReadable(number) {
         
     if (number > 100) {
         let ostatok = number % 100;
+        if(ostatok == 0) {
+            return ones[parseInt(number.toString()[0])] + " hundred"
+        }
         return ones[parseInt(number.toString()[0])] + " hundred" + ' ' + toReadable(ostatok);
     }
 
